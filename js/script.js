@@ -40,13 +40,15 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 }
 
-
 // click add button
 const btnAddMember = document.getElementById('addMemberButton');
 
 btnAddMember.addEventListener('click', function(){
     getNewMemberData();
+    console.log(teamMembers);
 })
+
+
 
 
 // ***** functions
@@ -70,12 +72,20 @@ function addCard(name, role, img) {
 }
 
 
-// get the data of the new member add form
+// get the data of the new member and create card
 function getNewMemberData() {
     
     const name = document.getElementById('name').value;
     const role = document.getElementById('role').value;
     const img = document.getElementById('image').value;
+
+    const newMemberObj = {
+        'name': name,
+        'role': role,
+        'img': img
+    }
+
+    teamMembers.push(newMemberObj);
 
     addCard(name, role, img);
 
