@@ -33,6 +33,7 @@ const teamMembers = [
     },
 ];
 
+// load team cards
 for (let i = 0; i < teamMembers.length; i++) {
 
     addCard(teamMembers[i].name, teamMembers[i].role, teamMembers[i].img);
@@ -40,8 +41,17 @@ for (let i = 0; i < teamMembers.length; i++) {
 }
 
 
+// click add button
+const btnAddMember = document.getElementById('addMemberButton');
+
+btnAddMember.addEventListener('click', function(){
+    getNewMemberData();
+})
+
+
 // ***** functions
 
+//add one card
 function addCard(name, role, img) {
 
     const cardContainer = document.querySelector('#team .team-container');
@@ -56,5 +66,17 @@ function addCard(name, role, img) {
         </div>
     </div>
     `
+
+}
+
+
+// get the data of the new member add form
+function getNewMemberData() {
+    
+    const name = document.getElementById('name').value;
+    const role = document.getElementById('role').value;
+    const img = document.getElementById('image').value;
+
+    addCard(name, role, img);
 
 }
