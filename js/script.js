@@ -79,14 +79,24 @@ function getNewMemberData() {
     const role = document.getElementById('role').value;
     const img = document.getElementById('image').value;
 
-    const newMemberObj = {
-        'name': name,
-        'role': role,
-        'img': img
+    // check if textbox are empty
+    if (name == '' || role == '' || img == '') {
+
+        alert('Inserisci tutti i dati prima di procedere!')
+
+    } else {
+
+        const newMemberObj = {
+            'name': name,
+            'role': role,
+            'img': img
+        }
+    
+        teamMembers.push(newMemberObj);
+    
+        addCard(name, role, img);
+
     }
 
-    teamMembers.push(newMemberObj);
-
-    addCard(name, role, img);
 
 }
