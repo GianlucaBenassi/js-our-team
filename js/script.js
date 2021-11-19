@@ -1,3 +1,5 @@
+// ***** main script
+
 const teamMembers = [
     {
         'name': 'Wayne Bernett',
@@ -30,3 +32,29 @@ const teamMembers = [
         'img': 'barbara-ramos-graphic-designer.jpg'
     },
 ];
+
+for (let i = 0; i < teamMembers.length; i++) {
+
+    addCard(teamMembers[i].name, teamMembers[i].role, teamMembers[i].img);
+
+}
+
+
+// ***** functions
+
+function addCard(name, role, img) {
+
+    const cardContainer = document.querySelector('#team .team-container');
+    cardContainer.innerHTML += `
+    <div class="team-card">
+        <div class="card-image">
+            <img src="img/${img}" alt="${name}"/>
+        </div>
+        <div class="card-text">
+            <h3>${name}</h3>
+            <p>${role}</p>
+        </div>
+    </div>
+    `
+
+}
