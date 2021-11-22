@@ -45,7 +45,6 @@ const btnAddMember = document.getElementById('addMemberButton');
 
 btnAddMember.addEventListener('click', function(){
     getNewMemberData();
-    console.log(teamMembers);
 })
 
 
@@ -82,7 +81,7 @@ function getNewMemberData() {
     // check if textbox are empty
     if (name == '' || role == '' || img == '') {
 
-        alert('Inserisci tutti i dati prima di procedere!')
+        alert('Inserisci tutti i dati prima di procedere!');
 
     } else {
 
